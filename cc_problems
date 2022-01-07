@@ -1,0 +1,25 @@
+//The Lead Game
+//---solution---
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    long int si,ti,siLead=0,tiLead=0,t1cumlative=0,t2cumlative=0;
+    while (n--)
+    {
+       cin>>si>>ti;
+       t1cumlative+=si;
+       t2cumlative+=ti;
+       if(t1cumlative>t2cumlative)
+        siLead=max(siLead,t1cumlative-t2cumlative);
+       else
+        tiLead=max(tiLead,t2cumlative-t1cumlative);
+    }
+    if(siLead>tiLead)
+     cout<<'1'<<' '<<siLead;
+    else
+     cout<<'2'<<' '<<tiLead;
+
+}
